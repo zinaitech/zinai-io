@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZinAI | Contact</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .contact-section {
+            padding: 60px 0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .contact-form-container input, .contact-form-container textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .contact-form-container textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form-container button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form-container button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><img height="40" alt="" src="./assets/logo_zinai.png"></a>
+                </div>
+                <ul class="nav-links">
+					<li><a href="./services.html">Technology Services</a></li>   
+                    <li><a href="./company.html">Company</a></li>                 
+                    <li><a href="./contact.html">Contact US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <h2>문의하기</h2>
+        <p style="text-align: center; margin-bottom: 30px;">궁금한 점이 있으시면 아래 양식을 작성하여 문의해주세요.</p>
+        <div class="contact-form-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">문의 제목</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">문의 내용 보내기</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>ZinAI | 대표: 김인정 | 사업자등록번호: 722-87-00187</p>
+            <p>주소: 서울특별시 강남구 | 전화: 02-880-8370 | 이메일: zinai.tech@gmail.com</p>
+            <p>Copyright &copy; 2015 ZinAI. All Rights Reserved.</p>
+            <p>
+                <a href="#">개인정보처리방침</a> | 
+                <a href="#">이용약관</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // 이름, 이메일, 제목, 문의 내용을 가져옵니다.
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // 이메일 본문 구성: '이름: [이름]'과 문의 내용을 포함합니다.
+            const body = `${message}`;
+            
+            // 이메일 제목 구성: '[문의] [제목] - [이름]([이메일])' 형식을 따릅니다.
+            const fullSubject = `[문의] ${subject} - ${name}(${email})`;
+            
+            const mailtoLink = `mailto:zinai.tech@gmail.com?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+</body>
+</html>
