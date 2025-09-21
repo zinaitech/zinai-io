@@ -65,8 +65,7 @@
         }
 
        .hero {
-            /* 기존 배경 이미지 코드를 아래처럼 변경합니다. */
-            background: url('./assets/c.jpg') no-repeat center center/cover;
+            background: url('./assets/b.jpg') no-repeat center center/cover;
             height: 250px;
             display: flex;
             justify-content: center;
@@ -164,9 +163,9 @@
 			cursor: pointer;
 			font-size: 18px;
 			transition: background-color 0.3s;
-			text-decoration: none; /* <a> 태그의 기본 밑줄 제거 */
-			display: block; /* 블록 요소로 만들어 너비를 100%로 확장 */
-			text-align: center; /* 텍스트를 중앙에 정렬 */
+			text-decoration: none;
+			display: block;
+			text-align: center;
 		}
 
 		.contact-form button:hover, .contact-form a.contact-button:hover {
@@ -187,10 +186,7 @@
             margin: 0 10px;
         }
 
-		/* index.html */
-
 		@media (max-width: 768px) {
-		  /* Hero 섹션 글꼴 크기 조정 */
 		  .hero h1 {
 			font-size: 36px;
 		  }
@@ -198,30 +194,18 @@
 			font-size: 20px;
 		  }
 
-		  /* 주요 활동, 교육 프로그램 그리드 레이아웃 조정 */
 		  .services-grid, .portfolio-grid {
-			grid-template-columns: 1fr; /* 모바일에서 한 줄에 하나씩 보이도록 설정 */
+			grid-template-columns: 1fr;
 		  }
 
-		  /* 섹션 패딩 조정 */
 		  section {
 			padding: 30px 0;
 		  }
 		}
 
-		/* index.html: CSS 추가 (기존 스타일 아래에 추가) */
-		@media (max-width: 768px) {
-			.hero h1 {
-				font-size: 36px; /* 모바일에서 h1 글꼴 크기 줄이기 */
-			}
-			.hero p {
-				font-size: 20px; /* 모바일에서 p 글꼴 크기 줄이기 */
-			}
-		}
-
 		@media (max-width: 480px) {
 			.hero h1 {
-				font-size: 28px; /* 더 작은 모바일 화면을 위해 추가 조정 */
+				font-size: 28px;
 			}
 			.hero p {
 				font-size: 18px;
@@ -236,7 +220,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <a href="./index.html"><img height="40" alt="" src="./assets/logo_zinai.png"></a>
+                    <a href="index.html"><img height="40" alt="" src="./assets/logo_zinai.png"></a>
                 </div>
                 <ul class="nav-links">
 					<li><a href="./services.html">Technology Services</a></li>   

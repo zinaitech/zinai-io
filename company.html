@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZinAI | Company</title>
     <style>
+        /* CSS 변수를 사용하여 색상을 정의하고, 그림자를 제거했습니다. */
+        :root{
+            --primary:#4ad6ff;
+            --accent:#79f27d;
+            --ink:#000000;
+            --muted:#a9b6d3;
+            --line: #cccccc;
+        }
+
         /* 기본 스타일 */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: var(--ink);
             line-height: 1.6;
+            background-color: #ffffff;
         }
 
         .container {
@@ -23,7 +33,7 @@
         header {
             background: #fff;
             padding: 20px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--line);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -38,7 +48,7 @@
         .logo a {
             font-size: 24px;
             font-weight: bold;
-            color: #3498db;
+            color: var(--primary);
             text-decoration: none;
         }
 
@@ -61,12 +71,11 @@
         }
 
         .nav-links a:hover {
-            color: #3498db;
+            color: var(--primary);
         }
 
        .hero {
-            /* 기존 배경 이미지 코드를 아래처럼 변경합니다. */
-            background: url('./assets/c.jpg') no-repeat center center/cover;
+            background: url('./assets/h.jpg') no-repeat center center/cover;
             height: 250px;
             display: flex;
             justify-content: center;
@@ -74,7 +83,7 @@
             text-align: center;
             color: white;
             flex-direction: column;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
         }
 
         .hero h1 {
@@ -84,6 +93,15 @@
 
         .hero p {
             font-size: 24px;
+        }
+        
+        /* ZinAI 그라데이션 적용 및 그림자 제거 */
+        .grad {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: none;
         }
 
         section {
@@ -106,6 +124,7 @@
 
         .services-grid, .portfolio-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, min-content);
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
@@ -115,7 +134,7 @@
             padding: 30px;
             text-align: center;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: none;
             transition: transform 0.3s;
         }
 
@@ -124,7 +143,32 @@
         }
 
         .service-item h3, .portfolio-item h3 {
-            color: #3498db;
+            color: var(--primary);
+        }
+        
+        /* li 목록 관련 스타일 */
+        .service-item ul {
+            text-align: left;
+            list-style: none; /* 기본 블릿 제거 */
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        
+        .service-item li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .service-item li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
         }
 
         .contact-form {
@@ -141,7 +185,7 @@
         }
 
         .contact-form button {
-            background-color: #3498db;
+            background-color: var(--primary);
             color: white;
             padding: 15px;
             border: none;
@@ -156,7 +200,7 @@
         }
 
 		.contact-form button, .contact-form a.contact-button {
-			background-color: #3498db;
+			background-color: var(--primary);
 			color: white;
 			padding: 15px;
 			border: none;
@@ -164,9 +208,9 @@
 			cursor: pointer;
 			font-size: 18px;
 			transition: background-color 0.3s;
-			text-decoration: none; /* <a> 태그의 기본 밑줄 제거 */
-			display: block; /* 블록 요소로 만들어 너비를 100%로 확장 */
-			text-align: center; /* 텍스트를 중앙에 정렬 */
+			text-decoration: none; 
+			display: block; 
+			text-align: center; 
 		}
 
 		.contact-form button:hover, .contact-form a.contact-button:hover {
@@ -187,47 +231,70 @@
             margin: 0 10px;
         }
 
-		/* index.html */
-
 		@media (max-width: 768px) {
-		  /* Hero 섹션 글꼴 크기 조정 */
 		  .hero h1 {
 			font-size: 36px;
 		  }
 		  .hero p {
 			font-size: 20px;
 		  }
-
-		  /* 주요 활동, 교육 프로그램 그리드 레이아웃 조정 */
 		  .services-grid, .portfolio-grid {
-			grid-template-columns: 1fr; /* 모바일에서 한 줄에 하나씩 보이도록 설정 */
+			grid-template-columns: 1fr;
 		  }
-
-		  /* 섹션 패딩 조정 */
 		  section {
 			padding: 30px 0;
 		  }
 		}
 
-		/* index.html: CSS 추가 (기존 스타일 아래에 추가) */
-		@media (max-width: 768px) {
-			.hero h1 {
-				font-size: 36px; /* 모바일에서 h1 글꼴 크기 줄이기 */
-			}
-			.hero p {
-				font-size: 20px; /* 모바일에서 p 글꼴 크기 줄이기 */
-			}
-		}
-
 		@media (max-width: 480px) {
 			.hero h1 {
-				font-size: 28px; /* 더 작은 모바일 화면을 위해 추가 조정 */
+				font-size: 28px;
 			}
 			.hero p {
 				font-size: 18px;
 			}
 		}
-
+        
+    .timeline{
+        position:relative;
+        margin-top:10px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .timeline::before{
+        content:""; 
+        position:absolute; 
+        left:18px; 
+        top:0; 
+        bottom:0; 
+        width:2px; 
+        background:linear-gradient(180deg, var(--primary), transparent)
+    }
+    .t-item{
+        position:relative; 
+        padding-left:48px; 
+        margin:18px 0;
+        text-align: left;
+    }
+    .t-item::before{
+        content:""; 
+        position:absolute;
+        left:10px; 
+        top:6px; 
+        width:16px;
+        height:16px; 
+        border-radius:50%; 
+        background:var(--primary); 
+        box-shadow: none;
+    }
+    .t-item h4{
+        margin:0 0 6px
+    }
+    .muted{
+        color: var(--muted);
+    }
+    
     </style>
 </head>
 <body>
@@ -248,50 +315,30 @@
     </header>
 
     <section class="hero">
-        <h1>Technology Services</h1>
-        <p>Pursuing Technological Excellence, Driven by Customers</p>
-    </section>
+        <h1><span class="grad">ZinAI</span> — Pursuing Technological Excellence, Driven by Customers</h1>
+</section>
 
     <section id="services" class="services container">
-        <!--<h2>Technology Services</h2>-->
-        <div class="services-grid">
-            <div class="service-item">
-				<img src="./assets/program_2.png" alt="전문가 양성" height="200">
-				<h3>Professional Software Development</h3> </br>
-				<p><b>맞춤형 온디바이스 AI 시스템 개발 및 최적화</b></br>
-				고객이 원하는 온디바이스 AI 시스템을 직접 구축·최적화하여 현장에 적용 가능한 솔루션 제공</p>
-            </div>
-            <div class="service-item">
-                <img src="./assets/program_1.png" alt="IT 컨설팅" height="175">
-				<h3>Technical Consulting</h3>
-				<p><b>온디바이스 AI 도입 전략 자문</b></br>
-                제조기업이 온디바이스 AI 도입 전략을 명확히 세우고, 최적의 기술을 선택할 수 있도록 자문</p>
-            </div>
-            <div class="service-item">
-                <img src="./assets/program_3.png" alt="AI 부트캠프" height="200">
-				<h3>Technical Training</h3>
-                <p><b>제조업 엔지니어 직무 전환을 위한 실무 중심 교육</b></br>
-				기제조업 엔지니어들이 온디바이스 AI 기술 역량을 직접 습득하여 직무 전환 및 내부 자립 역량 강화</p>
-            </div>
-        </div>
-    </section>
-
-	<section id="contact" class="contact container">
-		<h2>문의하기</h2>
-		<p style="text-align: center;">더 궁금한 점이 있으시면 언제든지 저희에게 연락 주세요.</p>
-		<div class="contact-form">
-			<!--<input type="text" placeholder="이름" required>
-			<input type="email" placeholder="이메일" required>
-			<input type="tel" placeholder="전화번호">
-			<textarea rows="5" placeholder="문의 내용" required></textarea>-->
-			<a href="mailto:zinaitech@gmail.com?subject=[문의] ZinAI에 문의하기" class="contact-button">메일로 문의하기</a>
+	<div class="services-grid">
+		<div class="service-item">
+			<section id="timeline">
+				<div class="container">
+					<h2>2015년부터 축적한 컨설팅·자문·교육 역량을 기반으로, </br>2025년 온디바이스 AI 전문기업 <b>ZinAI</b>로 도약했습니다.</h2>
+			        <div class="timeline" aria-label="ZinAI 연혁">
+						<div class="t-item"><h4>2015</h4><p class="muted">홍우시스템즈 설립 — 기술컨설팅·자문·교육 시작</p></div>
+				        <div class="t-item"><h4>2016–2024</h4><p class="muted">다양한 산업에서 임베디드·AI 적용 경험 축적</p></div>
+			            <div class="t-item"><h4>2025</h4><p class="muted">ZinAI로 사명 변경 — 온디바이스 AI 전문기업으로 도약</p></div>
+			        </div>
+			     </div>
+			 </section>
 		</div>
+	</div>
 	</section>
 
-    <footer>
+<footer>
         <div class="container">
             <p>ZinAI | 대표: 김인정 | 사업자등록번호: 722-87-00187</p>
-            <p>주소: 서울특별시 강남구 | 전화: 02-880-8370 | 이메일: zinaitech@gmail.com</p>
+            <p>주소: 서울특별시 강남구 | 전화: 02-880-8370 | 이메일: zinai.tech@gmail.com</p>
             <p>Copyright &copy; 2015 ZinAI. All Rights Reserved.</p>
             <p>
                 <a href="#">개인정보처리방침</a> | 
