@@ -431,6 +431,18 @@
           color:#6b7280;
         }
 		
+
+		/* 하이퍼링크 기본 스타일 재정의 */
+			.link-style-override {
+				color: inherit; /* 부모 요소의 글자색을 상속받아 파란색을 없앱니다 (여기서는 검정색 계열) */
+				text-decoration: none; /* 밑줄을 제거합니다 */
+			}
+
+			.link-style-override:hover {
+				color: #3498db; /* (선택 사항) 마우스를 올렸을 때만 파란색으로 변경하여 링크임을 표시할 수 있습니다 */
+				text-decoration: underline; /* (선택 사항) 마우스를 올렸을 때 밑줄을 표시할 수 있습니다 */
+			}
+
 		/* programs.html: CSS 추가 (기존 스타일 아래에 추가) */
 		@media (max-width: 768px) {
 			.hero h1 {
@@ -507,10 +519,9 @@
 			<a href="https://forms.gle/s7mQDxC8homXzCQw7" class="apply-button" target="_blank">신청하기</a>
 			<img src="./assets/reg_form.jpg" alt="부트캠프 신청 QR 코드" style="width: auto; height: 50px;">
 		</div></p>
-
 	</section>
-
     <main>
+	</br>
         <section class="card">
             <h3 class="title">초대의 글</h3>
             <div style="margin:8px 0 16px 0;padding:20px;border-radius:16px;background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);border:1px solid #e2e8f0">
@@ -529,13 +540,13 @@
                     ▶ 2일차: 온디바이스 AI 풀스택, 인퍼런스 드라이버 개발(이론·실습), 모델 슬라이싱과 파이프라인드 인퍼런스(이론·실습)</p>
             <p style="margin-bottom:16px">이번 부트캠프는 임베디드 실시간 시스템 분야에서 30여 년간 세계적인 연구를 진행해 온 서울대학교 RTOSLab과의 협업으로 진행됩니다. 최근 RTOSLab은 온디바이스 AI 최적화에 관한 많은 연구 성과를 국제 학회와 저널에 발표하였습니다. 또한 저명한 국제 학술대회인 IEEE RTCSA와 ESWeek에서 각국의 연구자와 개발자들을 대상으로 튜토리얼을 진행해 왔습니다.</p>
 
-                    ▶ 서울대학교 RTOSLab: https://redwood.snu.ac.kr
+                    ▶ 서울대학교 RTOSLab: <a href="https://redwood.snu.ac.kr" target="_blank" class="link-style-override">https://redwood.snu.ac.kr</a>
 
             <p style="margin-bottom:16px">본 교육의 참가자들은 온디바이스 AI의 핵심 소프트웨어 개발을 빠른 시간 안에 직접 체득할 수 있을 것입니다. 이를 통해, 제조 현장에서 즉시 적용 가능한 경쟁력 있는 솔루션을 개발할 수 있는 출발점에 진입하게 될 것입니다.</p>
             <p>관심 있는 기업의 경영자와 개발자 여러분의 많은 참여를 기다립니다.</p>
         </section>
 
-        <section class="section" id="schedule">
+		<section class="section" id="schedule">
             <div class="card accent">
                 <h3 class="title">세부 프로그램</h3>
                 <div class="table-wrap">
@@ -640,22 +651,23 @@
             </div>
         </section>
 
-        <section class="section" id="registration">
+		<section class="section" id="registration">
             <div class="card accent">
                 <h3 class="title">등록 안내</h3>
                 <div class="info-card">
                     <div class="info-kv">
                         <div class="kv-row"><span class="k">등록비</span><span class="v">900,000원 (VAT 별도)</span></div>
-                        <div class="kv-row"><span class="k">입금계좌</span><span class="v"><!--농협은행 301-0181-4190-81 / 예금주: (주)진에이아이--> &nbsp;</span></div>
-                    </div>
-                    <div class="info-note">
-                        <div class="title">유의사항</div>
-                        <ul>
-                            <li>홈페이지에서 <b>"신청하기"</b> 진행 후 온라인입금 혹은 카드결제</li>
-                            <li>등록방법: 상단의 "신청하기" 버튼 클릭 혹은 QR코드로 통해 신청서 제출</li>
-                            <li>등록 시 포함할 정보: 등록자 성명, 소속, 직위, 이메일, 휴대전화번호</li>
-                            <li>참석확인증 발급</li>
-                        </ul>
+                        <div class="kv-row"><span class="k">유의사항</span>
+                            <span class="v">
+                                <ol style="margin: 0; padding-left: 20px;">
+                                    <li>본 홈페이지 상단 <b>"신청하기"</b>를 누르거나 <b>QR 코드</b>를 촬영하여 진행</li>
+                                    <li>등록하기 안내에 따라 요청되는 정보 제공 요망</li>
+                                    <li>온라인 입금 또는 카드 결제 정보는 개인적으로 추후 제공</li>
+                                    <li>강의 종료 시 참석 확인증 발급</li>
+                                    <li>기타 문의는 02-880-8370 또는 zinai.tech@gmail.com</li>
+                                </ol>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
