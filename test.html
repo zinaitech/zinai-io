@@ -1,15 +1,18 @@
 <script src="https://pay.nicepay.co.kr/v1/js/"></script>
 <button onclick="pay()">결제하기</button>
+
 <script>
 function pay(){
   AUTHNICE.requestPay({
-    clientId: "클라이언트 승인(Client) 키",   // 프런트용
+    clientId: "S1_55a6c0bf568344448d80efa560f88d87",   // ★ Client 승인 키
     method: "card",
     orderId: "order_" + Date.now(),
     amount: 1000,
     goodsName: "테스트 상품",
-    returnUrl: "https://pay.zinai.io/api/nicepay/return",  // ★여기만 우리 서버로!
-    fnError: function(res){ alert("결제 오류: " + res.errorMsg); }
+    returnUrl: "https://pay.zinai.io/api/nicepay/return", // ★ 우리 서버 API
+    fnError: function(res){
+      alert("결제 오류: " + res.errorMsg);
+    }
   });
 }
 </script>
